@@ -10,13 +10,14 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  use ({
-	  'rose-pine/neovim',
-	  as = 'rose-pine',
-	  config = function()
-		  vim.cmd('colorscheme rose-pine')
-	  end
-  })
+  -- use ({
+	--   'rose-pine/neovim',
+	--   as = 'rose-pine',
+	--   config = function()
+	-- 	  vim.cmd('colorscheme rose-pine')
+	--   end
+  -- })
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   use ( 'nvim-treesitter/nvim-treesitter', { run = ":TSUpdate"})
   use "nvim-lua/plenary.nvim" -- for harpoon
@@ -36,5 +37,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-path'         -- Path completions
   use 'L3MON4D3/LuaSnip'         -- Snippet engine
   use 'hrsh7th/cmp-nvim-lua'     -- Lua completions
+
+--use "rafamadriz/friendly-snippets" --saw on YT
 
 end)

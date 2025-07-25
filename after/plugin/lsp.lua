@@ -6,4 +6,4 @@ vim.lsp.config('luals', {
 })
 
 vim.lsp.enable('luals')
-
+vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition)

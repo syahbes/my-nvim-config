@@ -1,11 +1,8 @@
---fix trasparent bg not sure if i need
-function ColorMyPencils(color)
-	color = color or "rose-pine"
-	vim.cmd.colorscheme(color)
+vim.cmd.colorscheme "catppuccin"
 
-	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- Enable cursor line
+-- vim.opt.cursorline = true
 
-end
-
-ColorMyPencils()
+-- Override line number colors
+vim.api.nvim_set_hl(0, "LineNr", { fg = "#7f849c" })
+--vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#f5c2e7" })
