@@ -1,3 +1,4 @@
+-- from claude need to see it wont collide with other remaps
 local cmp = require('cmp')
 
 cmp.setup({

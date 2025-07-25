@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
   })
 
   use ( 'nvim-treesitter/nvim-treesitter', { run = ":TSUpdate"})
-  use "nvim-lua/plenary.nvim" -- don't forget to add this one if you don't have it yet!
+  use "nvim-lua/plenary.nvim" -- for harpoon
   use {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
@@ -28,6 +28,7 @@ return require('packer').startup(function(use)
   use ( 'mbbill/undotree' )
   use ( 'tpope/vim-fugitive' )
   
+  -- from claude 
   -- Completion plugins
   use 'hrsh7th/nvim-cmp'         -- The completion plugin
   use 'hrsh7th/cmp-nvim-lsp'     -- LSP source for nvim-cmp

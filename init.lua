@@ -1,2 +1,1 @@
-print("hellow")
-require("shlomi")
+require("core")
