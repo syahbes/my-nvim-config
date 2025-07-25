@@ -25,3 +25,5 @@ vim.keymap.set("v", "<leader>y", "\"+y") -- yank to clipboard
 --vim.keymap.set("n", "<leader>d", "\"_d") -- delete to void
 --vim.keymap.set("v", "<leader>d", "\"_d") -- delete to void
 
+vim.keymap.set("v", "x", '"_x', { desc = "Cut selection to black hole" })
+vim.keymap.set('n', '<C-q>', '<C-w>c', { noremap = true, silent = true })

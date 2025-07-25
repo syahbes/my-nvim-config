@@ -1,14 +1,17 @@
 --cursor as block
 --vim.opt.guicursor = ""
 
-vim.opt.nu = true
-vim.opt.relativenumber = true
+vim.opt.nu = true -- Show line numbers
+vim.opt.relativenumber = true -- Show relative line numbers
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.expandtab = true
-
-vim.opt.smartindent = true
+-- Indentation settings
+vim.opt.tabstop = 2 -- Number of spaces that a tab character in the file counts for
+vim.opt.softtabstop = 2 -- Number of spaces that a tab counts for while editing
+vim.opt.expandtab = true -- Use spaces instead of tab characters
+vim.opt.smartindent = true -- Smart autoindenting when starting a new line (useful for code)
+vim.opt.autoindent = true -- Copy indent from current line when starting a new line
+vim.opt.shiftwidth = 2 -- Number of spaces to use for each step of auto-indent
+--- end of indentation settings
 
 vim.opt.wrap = false
 
