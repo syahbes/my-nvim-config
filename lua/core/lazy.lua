@@ -61,4 +61,9 @@ require("lazy").setup({
 
   -- Auto pairs
   'windwp/nvim-autopairs',    -- Automatic bracket/quote pairing
+},
+{
+  rocks = {
+    enabled = false  -- This will silence all the luarocks warnings
+  }
 })
