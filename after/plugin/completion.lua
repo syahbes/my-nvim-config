@@ -10,9 +10,9 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-k>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-Space>'] = cmp.mapping.complete(), -- open suggestions menu
+    ['<Esc>'] = cmp.mapping.abort(), -- close suggestions menu
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- select 1st suggestion if no tab/scroll ?
     ['<Tab>'] = cmp.mapping.select_next_item(),
     ['<S-Tab>'] = cmp.mapping.select_prev_item(),
   }),

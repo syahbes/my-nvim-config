@@ -13,5 +13,19 @@ local function undotree_toggle_focus()
       end
     end, 10)
   end
-  
-vim.keymap.set({"n", "i"}, "<C-z>", undotree_toggle_focus)
+
+-- Function to handle undo tree toggle from insert mode
+local function insert_mode_undotree_toggle()
+    -- Switch to normal mode first
+    vim.cmd('stopinsert')
+    -- Use vim.schedule to ensure mode change completes before toggling
+    vim.schedule(function()
+        undotree_toggle_focus()
+    end)
+end
+
+-- Normal mode mapping - direct toggle
+vim.keymap.set("n", "<C-z>", undotree_toggle_focus, { desc = "Toggle undo tree" })
+
+-- Insert mode mapping - exit insert mode first, then toggle
+vim.keymap.set("i", "<C-z>", insert_mode_undotree_toggle, { desc = "Exit insert and toggle undo tree" })
