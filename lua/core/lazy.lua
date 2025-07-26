@@ -40,9 +40,16 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" }
   },
 
+  -- Git diff viewer
+  {
+    'sindrets/diffview.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
+
   -- Utilities
   'mbbill/undotree',
   'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',    -- GitHub extension for fugitive (enables :GBrowse)
 
   -- Completion plugins
   {
