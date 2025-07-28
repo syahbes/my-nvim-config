@@ -17,6 +17,10 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
+
+  -- alpha-nvim (welcome screen)
+  { 'goolord/alpha-nvim' },
+
   -- Telescope
   {
     'nvim-telescope/telescope.nvim',

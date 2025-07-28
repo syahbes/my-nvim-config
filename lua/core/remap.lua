@@ -27,3 +27,8 @@ vim.keymap.set("v", "<leader>y", "\"+y") -- yank to clipboard
 
 vim.keymap.set("v", "x", '"_x', { desc = "Cut selection to black hole" })
 vim.keymap.set('n', '<C-q>', '<C-w>c', { noremap = true, silent = true })
+
+--ctrl+s exit insert mode and write
+vim.keymap.set('i', '<C-s>', '<C-c>:w<CR>', { noremap = true, silent = true })
+--ctrl+s write (already in normal mode)
+vim.keymap.set('n', '<C-s>', ':w<CR>', { noremap = true, silent = true })

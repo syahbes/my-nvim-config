@@ -46,7 +46,6 @@ vim.lsp.enable('cssls')
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename)
-vim.keymap.set('n', 'gr', vim.lsp.buf.references)
 
 -- Diagnostic keymaps (for showing errors/warnings)
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float,
