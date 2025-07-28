@@ -50,8 +50,9 @@ npm install -g typescript typescript-language-server
 - rust-analyzer ?
 - clangd ?
 
-###
-Nerd font
+### Fonts
+- Install a **Nerd Font** (e.g., [FiraCode Nerd Font](https://www.nerdfonts.com/font-downloads)) and set it as your terminal font for proper icons.
+
 
 ### Lua Language Server
 
