@@ -1,26 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
-
-# I need much shorter version,
-
-include the plugins list with short desc,,
-the setup (git clone https://github.com/syahbes/nvim-with-packer.git ~/.config/nvim)
-and the Dependencies
-[](https://github.com/nikelaz/neovim-config/tree/main#dependencies)
-NPM Packages:
-[](https://github.com/nikelaz/neovim-config/tree/main#npm-packages)
-typescript
-typescript-language-server
-Install with package manager
-[](https://github.com/nikelaz/neovim-config/tree/main#install-with-package-manager)
-ripgrep
-rust-analyzer
-clangd
-LUA Language Server
-[](https://github.com/nikelaz/neovim-config/tree/main#lua-language-server)
-[https://luals.github.io/\#install](https://luals.github.io/#install)
-
-Here is a much shorter README.md draft for your repo including a brief plugin list, the setup command, and dependencies based on your request and the dependencies references from the linked repo:
-
 # my nvim config
 
 Neovim config using **lazy.nvim** plugin manager with essential plugins for a modern setup.
