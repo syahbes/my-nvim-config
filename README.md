@@ -23,7 +23,7 @@ Neovim config using **lazy.nvim** plugin manager with essential plugins for a mo
 Clone this repo to your Neovim config folder:
 
 ```bash
-git clone https://github.com/syahbes/nvim-with-packer.git ~/.config/nvim
+git clone git@github.com:syahbes/my-nvim-config.git ~/.config/nvim
 ```
 
 Open Neovim; lazy.nvim will bootstrap and install plugins automatically.
@@ -50,6 +50,8 @@ npm install -g typescript typescript-language-server
 - rust-analyzer ?
 - clangd ?
 
+###
+Nerd font
 
 ### Lua Language Server
 
