@@ -71,6 +71,7 @@ dashboard.section.footer.opts.hl = "AlphaPath"
 
 -- Your custom buttons
 dashboard.section.buttons.val = {
+    dashboard.button("n", "  Open netrw", ":Explore<CR>"),
     dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
     dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
     dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),

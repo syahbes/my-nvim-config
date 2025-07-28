@@ -68,7 +68,9 @@ require("lazy").setup({
   },
 
   -- Formatting
-  'nvimtools/none-ls.nvim',   -- For formatting with prettier
+  'nvimtools/none-ls.nvim',   -- For formatting with prettier 
+  
+  --'rafamadriz/friendly-snippets', -- snippets(not worked need to figure our why)
 
   -- Auto pairs
   'windwp/nvim-autopairs',    -- Automatic bracket/quote pairing
