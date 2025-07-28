@@ -5,6 +5,19 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv")
 
+-- Normal mode line movement
+-- Alt-j: Move current line down one position
+vim.keymap.set('n', '<A-j>', ':m +1<CR>==')
+-- Alt-k: Move current line up one position  
+vim.keymap.set('n', '<A-k>', ':m -2<CR>==')
+
+-- Visual mode line movement (works on selected blocks)
+-- Alt-j: Move selected block down one position
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv")
+-- Alt-k: Move selected block up one position
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv")
+-- end of alt movement
+
 vim.keymap.set("n", "Y",  "yg$") --yank line
 vim.keymap.set("n", "J",  "mzJ`z") --append the next row to end
 
