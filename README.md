@@ -1,4 +1,4 @@
-# Neovim Configuration File Structure
+# Neovim Configuration
 
 ## Directory Structure
 
