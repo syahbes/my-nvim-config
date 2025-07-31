@@ -73,17 +73,17 @@ dashboard.section.footer.opts.hl = "AlphaPath"
 dashboard.section.buttons.val = {
 	dashboard.button("n", "  Open netrw", ":Explore<CR>"),
 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
-	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
-	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
+--	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+--	dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
+--	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
+--	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
 -- Set the color for the header
 dashboard.section.header.opts.hl = "AlphaHeader"
 
 -- Define the highlight groups
-vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#87D88E", force = true })
+vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#CBA6F7", force = true })
 vim.api.nvim_set_hl(0, "AlphaPath", { fg = "#87D88E", force = true }) -- Green for path and parentheses
 vim.api.nvim_set_hl(0, "AlphaBranch", { fg = "#70A5F9", force = true }) -- Blue for branch name
 
@@ -91,7 +91,7 @@ vim.api.nvim_set_hl(0, "AlphaBranch", { fg = "#70A5F9", force = true }) -- Blue 
 vim.api.nvim_create_autocmd("ColorScheme", {
 	pattern = "*",
 	callback = function()
-		vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#87D88E", force = true })
+		vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#CBA6F7", force = true })
 		vim.api.nvim_set_hl(0, "AlphaPath", { fg = "#87D88E", force = true })
 		vim.api.nvim_set_hl(0, "AlphaBranch", { fg = "#70A5F9", force = true })
 	end,

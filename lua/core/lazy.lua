@@ -17,8 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Setup lazy.nvim
 require("lazy").setup({
-
-	-- alpha-nvim (welcome screen)
+	-- Welcome screen
 	{ "goolord/alpha-nvim" },
 
 	-- Telescope
@@ -49,6 +48,9 @@ require("lazy").setup({
 		"sindrets/diffview.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+
+	-- Icons (for Telescope and Git diff viewer)
+--	{ "nvim-tree/nvim-web-devicons" },
 
 	-- Utilities
 	"mbbill/undotree",
