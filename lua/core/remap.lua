@@ -24,8 +24,9 @@ vim.keymap.set("n", "N", "Nzzzv")
 vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true }) -- write (already in normal mode)
 vim.keymap.set("i", "<C-s>", "<C-c>:w<CR>", { noremap = true, silent = true }) --exit insert mode and write
 
-vim.keymap.set("n", "Y", "yg$") --yank line
+vim.keymap.set("n", "Y", "yg$") --yank from cursor to end of line
 vim.keymap.set("v", "<leader>y", '"+y') -- yank to clipboard
+vim.keymap.set("i", "<C-b>", "<C-r>\"", { noremap = true, silent = true }) -- Paste from yank buffer in insert mode
 
 --vim.keymap.set("n", "J",  "mzJ`z") --append the next row to end
 
@@ -35,7 +36,7 @@ vim.keymap.set("i", "<C-x>", '<C-o>"_dd', { desc = "Cut whole line to black hole
 vim.keymap.set("n", "<C-x>", '"_dd', { desc = "Cut whole line to black hole (normal)" })
 
 -- ???
---vim.keymap.set("x", "<leader>p", "\"_dP") -- greatest remap ever (paste over and throw the selected to void)
+vim.keymap.set("x", "<leader>p", "\"_dP") -- greatest remap ever (paste over and throw the selected to void)
 --not working good?
 --vim.keymap.set("n", "<leader>d", "\"_d") -- delete to void
 --vim.keymap.set("v", "<leader>d", "\"_d") -- delete to void
