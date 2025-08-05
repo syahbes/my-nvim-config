@@ -36,7 +36,7 @@ vim.keymap.set("i", "<C-x>", '<C-o>"_dd', { desc = "Cut whole line to black hole
 vim.keymap.set("n", "<C-x>", '"_dd', { desc = "Cut whole line to black hole (normal)" })
 
 -- ???
-vim.keymap.set("x", "<leader>p", "\"_dP") -- greatest remap ever (paste over and throw the selected to void)
+--vim.keymap.set("x", "<leader>p", "\"_dP") -- greatest remap ever (paste over and throw the selected to void)
 --not working good?
 --vim.keymap.set("n", "<leader>d", "\"_d") -- delete to void
 --vim.keymap.set("v", "<leader>d", "\"_d") -- delete to void

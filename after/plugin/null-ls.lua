@@ -29,7 +29,7 @@ null_ls.setup({
 		}),
 	},
 	-- Manual formatting keybinding
-	vim.keymap.set("n", "<C-i>", function()
+	vim.keymap.set("n", "<leader>fm", function()
 		vim.lsp.buf.format({
 			filter = function(client)
 				return client.name == "null-ls"
