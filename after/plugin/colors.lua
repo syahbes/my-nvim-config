@@ -1,9 +1,16 @@
 vim.cmd.colorscheme("catppuccin")
 
--- Override background color
-vim.api.nvim_set_hl(0, "Normal", { bg = "#171422" })
-vim.api.nvim_set_hl(0, "NormalNC", { bg = "#171422" })  -- non-active window
+-- Use autocmd to ensure overrides happen after colorscheme loads
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "*",
+  callback = function()
+    vim.api.nvim_set_hl(0, "Normal", { bg = "#120217" })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = "#120217" })  -- non-active window
+    vim.api.nvim_set_hl(0, "LineNr", { fg = "#6a6e84" })
+  end,
+})
 
--- Override line number color
+-- Also set immediately
+vim.api.nvim_set_hl(0, "Normal", { bg = "#120217" })
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "#120217" })
 vim.api.nvim_set_hl(0, "LineNr", { fg = "#6a6e84" })
-
