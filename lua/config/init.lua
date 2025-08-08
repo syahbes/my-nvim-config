@@ -1,15 +1,6 @@
 require("config.lazy_plugin_manager")
 require("config.remap")
 require("config.settings")
-require("config.alpha")
-require("config.autopairs")
-require("config.completion")
-require("config.color_scheme")
-require("config.fugitive")
-require("config.harpoon")
-require("config.lsp")
-require("config.null-ls")
-require("config.telescope_find")
-require("config.treesitter")
-require("config.undotree")
---require("config.vdiffview")
+
+-- Plugin configurations are now handled by lazy.nvim
+-- Individual plugin configs are in lua/config/plugins/
