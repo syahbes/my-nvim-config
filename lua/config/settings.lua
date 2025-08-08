@@ -36,7 +36,7 @@ vim.opt.updatetime = 50
 --did not liked this
 --vim.opt.colorcolumn = "80"
 
-vim.g.mapleader = " "
+--vim.g.mapleader = " "
 
 -- Disable unused providers
 vim.g.loaded_perl_provider = 0

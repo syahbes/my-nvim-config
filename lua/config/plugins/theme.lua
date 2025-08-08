@@ -3,7 +3,6 @@ return {
 	name = "catppuccin",
 	config = function()
 		vim.cmd([[colorscheme catppuccin-mocha]])
-
 		vim.api.nvim_create_autocmd("ColorScheme", {
 			pattern = "*",
 			callback = function()
