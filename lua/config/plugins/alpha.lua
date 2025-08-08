@@ -1,4 +1,3 @@
--- Welcome screen
 return {
 	"goolord/alpha-nvim",
 	config = function()

@@ -1,8 +1,6 @@
 return {
-
-	"neovim/nvim-lspconfig",
+	"neovim/nvim-lspconfig", -- did not worked without this
 	config = function()
-		-- lsp.lua
 		-- Setup TypeScript Language Server for JS/TS files
 		vim.lsp.config("ts_ls", {
 			cmd = { "typescript-language-server", "--stdio" },

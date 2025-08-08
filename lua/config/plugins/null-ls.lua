@@ -1,7 +1,6 @@
 return {
 	"nvimtools/none-ls.nvim", -- For formatting with prettier
 	config = function()
-		-- null-ls.lua
 		local null_ls = require("null-ls")
 
 		null_ls.setup({
