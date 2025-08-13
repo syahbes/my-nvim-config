@@ -3,28 +3,27 @@
 ## Directory Structure
 
 ```
-.
 ├── init.lua            # Root main entry point
+├── lazy-lock.json      # Lazy.nvim lock file
 ├── lua
-│   └── core
-│       ├── init.lua            # Main entry point
-│       ├── lazy.lua            # Plugin manager setup
-│       ├── remap.lua           # Custom key mappings
-│       └── set.lua             # Core Neovim settings
-├── after
-│   └── plugin
-│       ├── alpha.lua           # Welcome screen
-│       ├── autopairs.lua       # Auto bracket closing
-│       ├── colors.lua          # Color scheme
-│       ├── completion.lua      # Configures nvim-cmp for autocompletion
-│       ├── fugitive.lua        # Git wrapper
-│       ├── harpoon.lua         # File navigator
-│       ├── lsp.lua             # Configures LSP servers (TypeScript, Lua, CSS)
-│       ├── null-ls.lua         # Formatter ?
-│       ├── telescope.lua       # Fuzzy finder
-│       ├── treesitter.lua      # Syntax highlighting
-│       ├── undotree.lua        # Enhanced Ctrl z
-│       └── vdiffview.lua       # Vertical Diff
+│   └── config
+│       ├── init.lua                    # Main entry point
+│       ├── lazy_plugin_manager.lua     # Plugin manager setup
+│       ├── remap.lua                   # Custom key mappings
+│       ├── settings.lua                # Core Neovim settings
+│       └── plugins
+│           ├── alpha.lua               # Welcome screen
+│           ├── autopairs.lua           # Auto bracket closing
+│           ├── catppuccin.lua          # Color scheme
+│           ├── completion.lua          # Configures nvim-cmp for autocompletion
+│           ├── fugitive.lua            # Git wrapper
+│           ├── harpoon.lua             # File navigator
+│           ├── lsp.lua                 # Configures LSP servers (TypeScript, Lua, CSS)
+│           ├── null-ls.lua             # Formatter
+│           ├── telescope.lua           # Fuzzy finder
+│           ├── treesitter.lua          # Syntax highlighting
+│           ├── undotree.lua            # Enhanced Ctrl z
+│           └── vdiffview.lua           # Vertical Diff
 └── README.md
 ```
 
@@ -36,14 +35,14 @@
 - Loads all configuration modules
 - Keep this file minimal - it just orchestrates loading other files
 
-### `lua/core/` (Core Configuration)
+### `lua/config/` (Core Configuration)
 
 - **`init.lua`**: dir main entry
-- **`lazy.lua`**: Sets up the lazy.nvim plugin manager
-- **`set.lua`**: Basic Neovim options (indentation, line numbers, etc.)
+- **`lazy_plugin_manager.lua`**: Sets up the lazy.nvim plugin manager
+- **`settings.lua`**: Basic Neovim options (indentation, line numbers, etc.)
 - **`remap.lua`**: Custom keyboard shortcuts and mappings
 
-### `after/plugin/` (Plugin Configurations)
+### `lua/config/plugins/` (Plugins Configurations)
 
 Each file configures a specific plugin or related group of plugins:
 
@@ -62,7 +61,7 @@ Each file configures a specific plugin or related group of plugins:
 
 ## How It Works
 
-1. **lazy.nvim Discovery**: The lazy.nvim plugin manager automatically discovers all `.lua` files in the `after/plugin/` directory
+1. **lazy.nvim Discovery**: The lazy.nvim plugin manager automatically discovers all `.lua` files in the `lua/config/plugins/` directory
 2. **Module Loading**: Each plugin file returns a table that lazy.nvim uses to configure that plugin
 3. **Lazy Loading**: Many plugins are configured to load only when needed (on certain events or key presses)
 
@@ -162,4 +161,17 @@ Check everything works: Try some key mappings like:
 <space>ff - Find files (Telescope)
 <space>fg - Live grep (search in files)
 gd - Go to definition (when editing code)
+```
+
+# Add new plugins
+
+To add new plugins, add them to the `lua/config/plugins/` directory and lazy.nvim will automatically discover them and install them.
+```lua
+return {
+    "plugin-name",
+    -- plugin options (tag, branch, dependencies, etc.)
+    config = function()
+        -- configuration code
+    end,  -- comma after end is correct
+}  -- final closing brace, no comma
 ```
