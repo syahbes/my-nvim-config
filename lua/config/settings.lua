@@ -43,3 +43,19 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
+
+-- Enable folding
+vim.opt.foldmethod = 'manual'
+
+-- Save and restore views automatically
+local augroup = vim.api.nvim_create_augroup('AutoSaveFolds', { clear = true })
+vim.api.nvim_create_autocmd('BufWinLeave', {
+  group = augroup,
+  pattern = '*',
+  command = 'silent! mkview'
+})
+vim.api.nvim_create_autocmd('BufWinEnter', {
+  group = augroup,
+  pattern = '*',
+  command = 'silent! loadview'
+})
