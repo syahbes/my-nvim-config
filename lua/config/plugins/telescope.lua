@@ -5,7 +5,23 @@ return {
 		"nvim-lua/plenary.nvim",
 	},
 	config = function()
-		local builtin = require("telescope.builtin")
+		local telescope = require("telescope")
+		local builtin = require("telescope.builtin")		
+		telescope.setup({
+			defaults = {
+				layout_strategy = "vertical",
+				layout_config = {
+					vertical = {
+						width = 0.99,  -- Almost full width
+						height = 0.99, -- Almost full height
+						preview_cutoff = 0,
+						prompt_position = "bottom",
+						preview_height = 0.4,  -- Preview takes 40% of height, results get 60%
+					},
+				},
+			},
+		})
+
 		-- default
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 		vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
