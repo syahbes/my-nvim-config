@@ -12,11 +12,10 @@ return {
 				layout_strategy = "vertical",
 				layout_config = {
 					vertical = {
-						width = 0.99,  -- Almost full width
-						height = 0.99, -- Almost full height
+						width = 0.99,
+						height = 0.99,
 						preview_cutoff = 0,
 						prompt_position = "bottom",
-						preview_height = 0.4,  -- Preview takes 40% of height, results get 60%
 					},
 				},
 			},
