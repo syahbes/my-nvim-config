@@ -55,35 +55,6 @@ return {
 			end
 		end
 
-		-- Set your custom header
-		-- small ASCII header – back-slashes doubled
-		--dashboard.section.header.val = {
-		--    "                                                     ",
-		--    "##\\   ##\\ ########\\  ######\\  ##\\    ##\\ ######\\ ##\\      ##\\",
-		--    "###\\  ## |##  _____|##  __##\\ ## |   ## |\\_##  _|###\\    ### |",
-		--    "####\\ ## |## |      ## /  ## |## |   ## |  ## |  ####\\  #### |",
-		--    "## ##\\## |#####\\    ## |  ## |\\##\\  ##  |  ## |  ##\\##\\## ## |",
-		--    "## \\#### |##  __|   ## |  ## | \\##\\##  /   ## |  ## \\###  ## |",
-		--    "## |\\### |## |      ## |  ## |  \\###  /    ## |  ## |\\#  /## |",
-		--    "## | \\## |########\\  ######  |   \\#  /   ######\\ ## | \\_/ ## |",
-		--    "\\__|  \\__|\\________| \\______/     \\_/    \\______|\\__|     \\__|",
-		--	"                                                     ",
-		--	"  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
-		--	"  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
-		--	"  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
-		--	"  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
-		--	"  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
-		--	"  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
-		--	"                                                     ",
-		--    "  _   _                 _           ",
-		--    " | \\ | | ___  _____   _(_)_ __ ___",
-		--    " |  \\| |/ _ \\/ _ \\ \\ / / | '_ ` _ \\",
-		--    " | |\\  |  __/ (_) \\ V /| | | | | | |",
-		--    " |_| \\_|\\___|\\___/ \\_/ |_|_| |_| |_|",
-		--    "                                    ",
-		--    "   ",
-		--}
-
 		-- Function to get dynamic Neovim version
 		local function get_nvim_version()
 			local version = vim.version()
@@ -95,11 +66,16 @@ return {
 			get_nvim_version(),
 		}
 
+		-- Set left alignment for header
+		dashboard.section.header.opts.hl = "AlphaHeader"
+		dashboard.section.header.opts.position = "left"
+
 		-- Set the terminal prompt as footer
 		dashboard.section.footer.val = create_colored_footer()
 		dashboard.section.footer.opts.hl = "AlphaPath"
+		dashboard.section.footer.opts.position = "left"
 
-		-- Your custom buttons
+		-- Your custom buttons with left alignment
 		dashboard.section.buttons.val = {
 			dashboard.button("n", "  Open netrw", ":Explore<CR>"),
 			dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
@@ -108,9 +84,9 @@ return {
 			--	dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),
 			--	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 		}
-
-		-- Set the color for the header
-		dashboard.section.header.opts.hl = "AlphaHeader"
+		-- Ensure buttons are left-aligned
+		dashboard.section.buttons.opts.position = "left"
+		dashboard.section.buttons.opts.spacing = 1
 
 		-- Define the highlight groups
 		vim.api.nvim_set_hl(0, "AlphaHeader", { fg = "#CBA6F7", force = true })
@@ -165,17 +141,59 @@ return {
 			end,
 		})
 
-		-- Configure vertical centering
+		-- padding
 		dashboard.config.layout = {
-			{ type = "padding", val = vim.fn.max({ 2, vim.fn.floor(vim.fn.winheight(0) * 0.2) }) },
+			{ type = "padding", val = 2 },
 			dashboard.section.header,
 			{ type = "padding", val = 2 },
 			dashboard.section.buttons,
 			{ type = "padding", val = 2 },
 			dashboard.section.footer,
+		 }
+
+		-- Set global alignment to left for all elements
+		dashboard.config.opts = {
+			position = "left",
+			margin = 5,  -- Add some left margin if desired
 		}
+
+		-- Alternative method: Set individual button alignment if needed
+		for _, button in ipairs(dashboard.section.buttons.val) do
+			button.opts = button.opts or {}
+			button.opts.position = "left"
+		end
 
 		-- Apply the configuration
 		alpha.setup(dashboard.config)
 	end,
 }
+
+
+		-- Set your custom header
+		-- small ASCII header – back-slashes doubled
+		--dashboard.section.header.val = {
+		--    "                                                     ",
+		--    "##\\   ##\\ ########\\  ######\\  ##\\    ##\\ ######\\ ##\\      ##\\",
+		--    "###\\  ## |##  _____|##  __##\\ ## |   ## |\\_##  _|###\\    ### |",
+		--    "####\\ ## |## |      ## /  ## |## |   ## |  ## |  ####\\  #### |",
+		--    "## ##\\## |#####\\    ## |  ## |\\##\\  ##  |  ## |  ##\\##\\## ## |",
+		--    "## \\#### |##  __|   ## |  ## | \\##\\##  /   ## |  ## \\###  ## |",
+		--    "## |\\### |## |      ## |  ## |  \\###  /    ## |  ## |\\#  /## |",
+		--    "## | \\## |########\\  ######  |   \\#  /   ######\\ ## | \\_/ ## |",
+		--    "\\__|  \\__|\\________| \\______/     \\_/    \\______|\\__|     \\__|",
+		--	"                                                     ",
+		--	"  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
+		--	"  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
+		--	"  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
+		--	"  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
+		--	"  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
+		--	"  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
+		--	"                                                     ",
+		--    "  _   _                 _           ",
+		--    " | \\ | | ___  _____   _(_)_ __ ___",
+		--    " |  \\| |/ _ \\/ _ \\ \\ / / | '_ ` _ \\",
+		--    " | |\\  |  __/ (_) \\ V /| | | | | | |",
+		--    " |_| \\_|\\___|\\___/ \\_/ |_|_| |_| |_|",
+		--    "                                    ",
+		--    "   ",
+		--}
