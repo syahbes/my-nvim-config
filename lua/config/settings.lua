@@ -1,5 +1,5 @@
 -- vim.opt.guicursor = "" --cursor as block
-vim.opt.cursorline = true -- highlight current line
+--vim.opt.cursorline = true -- highlight current line
 vim.opt.nu = true -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
 
