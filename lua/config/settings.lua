@@ -58,3 +58,11 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
   pattern = '*',
   command = 'silent! loadview'
 })
+
+-- disable autoformat
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "r", "o" })
+  end,
+})

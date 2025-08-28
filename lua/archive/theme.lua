@@ -1,0 +1,41 @@
+-- return {
+-- 	"rebelot/kanagawa.nvim",
+-- 	name = "kanagawa",
+-- 	config = function()
+-- 		vim.cmd([[colorscheme kanagawa]])
+-- 	end,
+-- }
+
+-- return {
+-- 	"avuenja/shizukana.nvim",
+-- 	lazy = false,
+-- 	priority = 1000,
+-- 	config = function()
+-- 	  require("shizukana").setup({
+-- 		-- your config here
+-- 	  })
+-- 	  vim.cmd.colorscheme("shizukana")
+-- 	end,
+--   }
+
+-- return {
+-- 	"vague2k/vague.nvim",
+-- 	lazy = false, -- make sure we load this during startup if it is your main colorscheme
+-- 	priority = 1000, -- make sure to load this before all the other plugins
+-- 	config = function()
+-- 	  -- NOTE: you do not need to call setup if you don't want to.
+-- 	  require("vague").setup({
+-- 		-- optional configuration here
+-- 	  })
+-- 	  vim.cmd("colorscheme vague")
+-- 	end
+--   }
+
+
+-- return {
+-- 	"EdenEast/nightfox.nvim",
+-- 	name = "nightfox",
+-- 	config = function()
+-- 		vim.cmd("colorscheme carbonfox")
+-- 	end
+-- }

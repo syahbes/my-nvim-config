@@ -6,6 +6,13 @@ return {
 			cmd = { "typescript-language-server", "--stdio" },
 			filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
 			root_markers = { "tsconfig.json", "jsconfig.json", "package.json", ".git" },
+			-- Disable formatting capabilities to prevent conflicts with null-ls
+			capabilities = (function()
+				local capabilities = vim.lsp.protocol.make_client_capabilities()
+				capabilities.textDocument.formatting = false
+				capabilities.textDocument.rangeFormatting = false
+				return capabilities
+			end)(),
 		})
 
 		-- Setup Lua Language Server for Lua files only
