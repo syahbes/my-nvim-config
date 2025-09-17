@@ -8,13 +8,14 @@ return {
 				-- Prettier for formatting
 				null_ls.builtins.formatting.prettier.with({
 					extra_args = {
-						--"--no-semi", -- No semicolons
-						--"--single-quote", -- Use single quotes
-						"--tab-width=4", -- Use 4 spaces instead of 2
-						"--trailing-comma=es5", -- Trailing commas where valid in ES5
-						"--print-width=120", -- Longer line width to prevent aggressive wrapping
-						"--bracket-spacing", -- Space between brackets
-						"--arrow-parens=avoid", -- Avoid parentheses around single arrow function parameters
+						-- "--no-semi", -- semi: false
+						"--single-quote", -- singleQuote: true
+						"--tab-width=2", -- tabWidth: 2
+						"--print-width=150", -- printWidth: 150
+						"--trailing-comma=es5", -- trailingComma (last element)
+						"--bracket-spacing", -- bracketSpacing: true
+						"--arrow-parens=always", -- "avoid" const square = x => x * x;  OR  "always" const square = (x) => x * x;
+						"--end-of-line=auto", -- endOfLine: "auto"
 					},
 					filetypes = {
 						"javascript",
@@ -38,26 +39,6 @@ return {
 					end,
 				})
 			end, { desc = "Format current buffer" }),
-
-			-- Format on save
-			--on_attach = function(client, bufnr)
-			--	if client.supports_method("textDocument/formatting") then
-			--		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-			--		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			--		vim.api.nvim_create_autocmd("BufWritePre", {
-			--			group = augroup,
-			--			buffer = bufnr,
-			--			callback = function()
-			--				vim.lsp.buf.format({
-			--					filter = function(client)
-			--						return client.name == "null-ls"
-			--					end,
-			--					bufnr = bufnr,
-			--				})
-			--			end,
-			--		})
-			--	end
-			--end,
 		})
 	end,
 }

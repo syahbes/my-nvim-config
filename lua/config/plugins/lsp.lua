@@ -57,7 +57,7 @@ return {
 		vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename)
 
 		-- Diagnostic keymaps (for showing errors/warnings)
-		vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show line diagnostic" })
+		vim.keymap.set("n", "<leader>k", vim.diagnostic.open_float, { desc = "Show line diagnostic" })
 		vim.keymap.set("n", "<leader>E", vim.diagnostic.setloclist, { desc = "Diagnostics to loclist" })
 	end,
 }

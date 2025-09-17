@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex) -- open netwr
+vim.keymap.set("n", "<leader>e", vim.cmd.Ex) -- open netwr
 
 ---- Move lines ----
 -- Normal mode line movement
