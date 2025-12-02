@@ -1,4 +1,10 @@
--- vim.opt.guicursor = "" --cursor as block
+--vim.opt.guicursor = "" --cursor as block
+vim.opt.guicursor = {
+  "n-v-c:block",  -- normal/visual: block
+  "i-ci-ve:block-blinkwait300-blinkon200-blinkoff150", -- insert: blinking block
+  "r-cr:hor20",
+  "o:hor50"
+}
 --vim.opt.cursorline = true -- highlight current line
 vim.opt.nu = true -- Show line numbers
 vim.opt.relativenumber = true -- Show relative line numbers
