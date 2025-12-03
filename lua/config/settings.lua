@@ -1,6 +1,10 @@
 --vim.opt.guicursor = "" --cursor as block
+--vim.cmd([[highlight Cursor guifg=NONE guibg=#F2CD32]]) -- yellow
+vim.cmd([[highlight Cursor guifg=NONE guibg=#A5E3A4]]) -- catppuccin green
+
 vim.opt.guicursor = {
-  "n-v-c:block",  -- normal/visual: block
+  --"n-v-c:block",  -- normal/visual: block
+  "n-v-c:block-Cursor",  -- normal/visual: block with Cursor highlight
   "i-ci-ve:block-blinkwait300-blinkon200-blinkoff150", -- insert: blinking block
   "r-cr:hor20",
   "o:hor50"

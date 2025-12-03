@@ -19,8 +19,9 @@ return {
 		vim.api.nvim_set_hl(0, "LineNr", { fg = "#6a6e84" })
 		vim.api.nvim_set_hl(0, "CursorLine", { bg = "#1a0a2e" })
 
-		vim.api.nvim_set_hl(0, "ModeMsg", { fg = "#FFFF00" }) -- mode indicator
-		--vim.api.nvim_set_hl(0, "MsgArea", { fg = "#00A57E" }) -- messages
+		--vim.api.nvim_set_hl(0, "ModeMsg", { fg = "#FFFF00" }) -- mode indicator
+		vim.api.nvim_set_hl(0, "ModeMsg", { fg = "#F2CD32" }) -- mode indicator
+		--vim.api.nvim_set_hl(0, "MsgArea", { fg = "#00A57E" }) -- messages 
 
 	end,
 }
