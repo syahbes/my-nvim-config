@@ -40,4 +40,11 @@ return {
     f(get_component_name, {}),
     t(";"),
   }),
+
+  -- Console log
+  s("log", {
+    t("console.log("),
+    i(1),
+    t(");"),
+  })
 }
