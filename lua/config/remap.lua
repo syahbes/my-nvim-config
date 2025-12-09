@@ -21,8 +21,25 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
 --vim.keymap.set('n', '<C-q>', '<C-w>c', { noremap = true, silent = true }) -- close active window
-vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true }) -- write (already in normal mode)
-vim.keymap.set("i", "<C-s>", "<C-c>:w<CR>", { noremap = true, silent = true }) --exit insert mode and write
+--vim.keymap.set("n", "<C-s>", ":w<CR>", { noremap = true, silent = true }) -- write (already in normal mode)
+vim.keymap.set("n", "<C-s>", function()
+    vim.lsp.buf.format({
+        filter = function(client)
+            return client.name == "null-ls"
+        end,
+    })
+    vim.cmd("w")
+end, { noremap = true, silent = true, desc = "Format and save" })
+--vim.keymap.set("i", "<C-s>", "<C-c>:w<CR>", { noremap = true, silent = true }) --exit insert mode and write
+vim.keymap.set("i", "<C-s>", function()
+  vim.cmd("stopinsert")
+  vim.lsp.buf.format({
+    filter = function(client)
+      return client.name == "null-ls"
+    end,
+  })
+  vim.cmd("w")
+end, { noremap = true, silent = true, desc = "Exit insert, format and save" })
 
 vim.keymap.set("n", "Y", "yg$") --yank from cursor to end of line
 vim.keymap.set("v", "<leader>y", '"+y') -- yank to clipboard
