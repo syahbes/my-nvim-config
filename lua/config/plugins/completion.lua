@@ -13,7 +13,7 @@ return {
 		local luasnip = require("luasnip")
 
 		-- Load custom snippets
-		require("luasnip.loaders.from_lua").load({paths = "~/.config/nvim/lua/config/snippets"})
+		require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/lua/config/snippets" })
 
 		cmp.setup({
 			snippet = {
@@ -21,14 +21,14 @@ return {
 					luasnip.lsp_expand(args.body)
 				end,
 			},
-      window = {
-  documentation = cmp.config.window.bordered({
-    border = 'rounded',
-    winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
-    col_offset = 1,  -- Add space to the left
-    side_padding = 1, -- Add padding inside the window
-  }),
-},
+			window = {
+				documentation = cmp.config.window.bordered({
+					border = "rounded",
+					winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
+					col_offset = 1, -- Add space to the left
+					side_padding = 1, -- Add padding inside the window
+				}),
+			},
 			mapping = cmp.mapping.preset.insert({
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),

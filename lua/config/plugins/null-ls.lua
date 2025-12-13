@@ -1,21 +1,20 @@
 return {
-	"nvimtools/none-ls.nvim", -- For formatting with prettier
+	"nvimtools/none-ls.nvim",
 	config = function()
 		local null_ls = require("null-ls")
 
 		null_ls.setup({
 			sources = {
-				-- Prettier for formatting
+				-- Prettier for web files
 				null_ls.builtins.formatting.prettier.with({
 					extra_args = {
-						-- "--no-semi", -- semi: false
-						"--single-quote", -- singleQuote: true
-						"--tab-width=2", -- tabWidth: 2
-						"--print-width=150", -- printWidth: 150
-						"--trailing-comma=es5", -- trailingComma (last element)
-						"--bracket-spacing", -- bracketSpacing: true
-						"--arrow-parens=always", -- "avoid" const square = x => x * x;  OR  "always" const square = (x) => x * x;
-						"--end-of-line=auto", -- endOfLine: "auto"
+						"--single-quote",
+						"--tab-width=2",
+						"--print-width=150",
+						"--trailing-comma=es5",
+						"--bracket-spacing",
+						"--arrow-parens=always",
+						"--end-of-line=auto",
 					},
 					filetypes = {
 						"javascript",
@@ -30,15 +29,19 @@ return {
 						"markdown",
 					},
 				}),
+				
+				-- StyLua for Lua files
+				null_ls.builtins.formatting.stylua,
 			},
-			-- Manual formatting keybinding
-			vim.keymap.set("n", "<leader>fm", function()
-				vim.lsp.buf.format({
-					filter = function(client)
-						return client.name == "null-ls"
-					end,
-				})
-			end, { desc = "Format current buffer" }),
 		})
+
+		-- Manual formatting keybinding
+		vim.keymap.set("n", "<leader>fm", function()
+			vim.lsp.buf.format({
+				filter = function(client)
+					return client.name == "null-ls"
+				end,
+			})
+		end, { desc = "Format current buffer" })
 	end,
 }
