@@ -77,3 +77,17 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.formatoptions:remove({ "r", "o" })
   end,
 })
+
+-- Configure diagnostic floating window
+vim.diagnostic.config({
+  float = {
+    border = 'rounded',  -- or remove this line for no border
+    source = 'always',   -- Show source of diagnostic
+    header = '',         -- Remove header
+    prefix = '',         -- Remove prefix
+    max_width = 80,      -- Set maximum width (adjust the number as needed)
+    format = function(diagnostic)
+      return diagnostic.message
+    end,
+  },
+})
