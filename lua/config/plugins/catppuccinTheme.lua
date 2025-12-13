@@ -21,7 +21,6 @@ return {
 
 		--vim.api.nvim_set_hl(0, "ModeMsg", { fg = "#FFFF00" }) -- mode indicator
 		vim.api.nvim_set_hl(0, "ModeMsg", { fg = "#F2CD32" }) -- mode indicator
-		--vim.api.nvim_set_hl(0, "MsgArea", { fg = "#00A57E" }) -- messages 
-
+		--vim.api.nvim_set_hl(0, "MsgArea", { fg = "#00A57E" }) -- messages
 	end,
 }

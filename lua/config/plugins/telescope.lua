@@ -6,7 +6,7 @@ return {
 	},
 	config = function()
 		local telescope = require("telescope")
-		local builtin = require("telescope.builtin")		
+		local builtin = require("telescope.builtin")
 		telescope.setup({
 			defaults = {
 				layout_strategy = "vertical",
@@ -24,12 +24,12 @@ return {
 		-- default
 		vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Telescope find files" })
 		-- vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
- 
-    vim.keymap.set("n", "<leader>fg", function()
-  builtin.live_grep({ cwd = vim.fn.getcwd() })
-end, { desc = "Telescope live grep" })
 
-    vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
+		vim.keymap.set("n", "<leader>fg", function()
+			builtin.live_grep({ cwd = vim.fn.getcwd() })
+		end, { desc = "Telescope live grep" })
+
+		vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 		-- end of default
 

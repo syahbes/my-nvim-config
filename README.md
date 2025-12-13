@@ -83,6 +83,9 @@ npm install -g tree-sitter-cli
 npm install -g prettier
 ```
 
+for format .lua files
+npm install -g @johnnymorganz/stylua-bin
+
 ## System Tools
 
 ```bash
@@ -166,6 +169,7 @@ gd - Go to definition (when editing code)
 # Add new plugins
 
 To add new plugins, add them to the `lua/config/plugins/` directory and lazy.nvim will automatically discover them and install them.
+
 ```lua
 return {
     "plugin-name",

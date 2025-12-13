@@ -10,7 +10,7 @@ return {
 				enabled = true,
 				icon = "*",
 				hl_group = "Comment",
-				position = "eol",  -- Changed from "eol" to "overlay"
+				position = "eol", -- Changed from "eol" to "overlay"
 			},
 		})
 	end,
