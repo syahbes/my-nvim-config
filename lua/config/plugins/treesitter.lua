@@ -1,37 +1,34 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "main",
 	build = ":TSUpdate",
 	config = function()
-		require("nvim-treesitter.configs").setup({
-			-- A list of parser names, or "all" (the listed parsers MUST always be installed)
-			ensure_installed = {
-				"javascript",
-				"typescript",
-				"c",
-				"lua",
-				"vim",
-				"vimdoc",
-				"query",
-				"markdown",
-				"markdown_inline",
-			},
+		-- Step 1: Setup nvim-treesitter (minimal config)
+		require("nvim-treesitter").setup({
+			-- You can set install directory if you want
+			-- install_dir = vim.fn.stdpath("data") .. "/site",
+		})
 
-			-- Install parsers synchronously (only applied to `ensure_installed`)
-			sync_install = false,
+		-- Step 2: Install parsers you want
+		local parsers = {
+			"javascript",
+			"typescript",
+			"c",
+			"lua",
+			"vim",
+			"vimdoc",
+			"query",
+			"markdown",
+			"markdown_inline",
+		}
+		require("nvim-treesitter").install(parsers)
 
-			-- Automatically install missing parsers when entering buffer
-			-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-			auto_install = false,
-
-			highlight = {
-				enable = true,
-
-				-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-				-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-				-- Using this option may slow down your editor, and you may see some duplicate highlights.
-				-- Instead of true it can also be a list of languages
-				additional_vim_regex_highlighting = false,
-			},
+		-- Step 3: Enable highlighting manually (this is now YOUR job!)
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "lua", "vim" },
+			callback = function()
+				vim.treesitter.start()
+			end,
 		})
 	end,
 }
