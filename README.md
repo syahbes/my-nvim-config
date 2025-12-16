@@ -1,3 +1,9 @@
+#
+Deprecated go to 
+https://github.com/syahbes/nvim-config-minimal
+
+
+
 # Neovim Configuration
 
 ## Directory Structure
